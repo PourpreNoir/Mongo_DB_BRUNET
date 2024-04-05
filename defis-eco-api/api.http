@@ -1,0 +1,78 @@
+###
+# Inscription d'un nouvel utilisateur
+###
+
+POST http://localhost:3000/api/register
+Content-Type: application/json
+
+{
+  "username": "pep",
+  "email": "pep@example.com",
+  "password": "password123",
+  "role": "user"
+}
+
+###
+
+# Connexion de l'utilisateur
+###
+
+POST http://localhost:3000/api/login
+Content-Type: application/json
+
+{
+  "email": "pop@example.com",
+  "password": "password123"
+}
+
+###
+
+# Récupération d'un défi aléatoire (sans authentification)
+###
+
+GET http://localhost:3000/api/defis/random
+
+###
+
+# Récupération de plusieurs défis aléatoires (sans authentification)
+###
+
+GET http://localhost:3000/api/defis/random/nombre_de_defis
+
+###
+
+# Ajout d'un nouveau défi (authentification requise)
+###
+
+POST http://localhost:3000/api/defis
+Content-Type: application/json
+Authorization: Bearer <le token>
+
+{
+  "titre": "Nouveau défi éco",
+  "description": "Description du nouveau défi éco",
+  "difficulte": "Moyen"
+}
+
+###
+
+# Mise à jour d'un défi existant (authentification requise)
+###
+
+PUT http://localhost:3000/api/defis/id_du_defi
+Content-Type: application/json
+Authorization: Bearer <le token>
+
+{
+  "titre": "Nouveau titre du défi",
+  "description": "Nouvelle description du défi",
+  "difficulte": "Difficile"
+}
+
+###
+
+# Suppression d'un défi existant (authentification requise)
+###
+
+DELETE http://localhost:3000/api/defis/id_du_defi
+Authorization: Bearer <le token>
