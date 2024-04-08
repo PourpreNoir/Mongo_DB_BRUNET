@@ -1,3 +1,5 @@
+BRUNET Clement, Vincent Stanger
+
 API pour les Défis Environnementaux avec MongoDB
 
 Description:
